@@ -1,15 +1,15 @@
 services:
   - type: web
     name: django-black-dash
-    plan: starter
+    plan: free # <--- Changed from starter to free
     env: python
-    region: frankfurt  # region should be same as your database region.
+    region: frankfurt  # Free tier is available in Frankfurt, but remove if issues arise
     buildCommand: "./build.sh"
     startCommand: "gunicorn core.wsgi:application"
     envVars:
       - key: DEBUG
-        value: False
+        value: False 
       - key: SECRET_KEY
         generateValue: true
-      - key: WEB_CONCURRENCY
-        value: 4
+      - key: WEB_CONCURRENCY 
+        value: 4 # Note: 4 might be high for the free tier's limited resources. Consider '2' if you face performance issues.
