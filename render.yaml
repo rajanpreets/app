@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: django-black-dash
+    name: BIOTECH-FUNDINGS
     plan: free # <--- Changed from starter to free
     env: python
     region: frankfurt  # Free tier is available in Frankfurt, but remove if issues arise
